@@ -13,7 +13,7 @@ NLTK_DATA_LOC = os.path.join(SCRIPTDIR, 'NLTKDATA')
 
 def cli():
     '''Define the command line structure and parse the arguments'''
-    parser = argparse.ArgumentParser(description='Create an html word cloud from text file')
+    parser = argparse.ArgumentParser(description='Create an html word cloud from text file', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('inputfile',
                         help='The file to generate the word cloud of')
     parser.add_argument('outputfile',
