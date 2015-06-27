@@ -1,4 +1,4 @@
-#!venv/bin/python
+#!/usr/bin/env python
 
 import nltk
 from cloud import NLTK_DATA_LOC
