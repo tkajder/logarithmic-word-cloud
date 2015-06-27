@@ -7,10 +7,6 @@ import nltk
 import os
 import sys
 
-# NLTK Data Constants
-SCRIPTDIR = os.path.abspath(os.path.dirname(__file__))
-NLTK_DATA_LOC = os.path.join(SCRIPTDIR, 'NLTKDATA')
-
 def cli():
     '''Define the command line structure and parse the arguments'''
     parser = argparse.ArgumentParser(description='Create an html word cloud from text file', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -45,8 +41,6 @@ def read_file(filename):
 
 def parse_word_counts(contents):
     '''Parse the file contents into word counts'''
-    # Retrieve nltk stopwords
-    nltk.data.path.append(NLTK_DATA_LOC)
     stopwords = set(nltk.corpus.stopwords.words())
 
     # Parse out stopwords and punctuation/numbers and create word counts
@@ -55,9 +49,6 @@ def parse_word_counts(contents):
     for lower_word in (word.lower() for word in words):
         if lower_word not in stopwords and lower_word.isalpha():
             word_counts[lower_word] += 1
-
-    # Reset nltk data path
-    del nltk.data.path[-1]
 
     return word_counts
 
