@@ -3,7 +3,7 @@
 import os
 from setuptools import setup
 
-setup(name='cloud',
+setup(name='logarithmicwordcloud',
       version=1.0,
       description='Creates logarithmic sized word clouds from text files',
       author='Thomas Kajder',
